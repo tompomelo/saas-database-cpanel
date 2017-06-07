@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @population.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @population.email %>
+</p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @population.id %>
+</p>
+
+<%= link_to 'Edit', edit_population_path(@population) %> |
+<%= link_to 'Back', populations_path %>
