@@ -5,11 +5,13 @@ class PopulationsController < ApplicationController
   # GET /populations.json
   def index
     @populations = Population.all
+    @population = Population.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /populations/1
   # GET /populations/1.json
   def show
+
   end
 
   # GET /populations/new

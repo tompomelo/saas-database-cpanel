@@ -1,31 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Populations</h1>
+<h1><center>Listing Populations</center></h1>
+<%= render "layouts/navigation" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @populations.each do |population| %>
+<div class="container demo">
+  <table class="datatable table table-striped table-bordered">
+    <thead>
       <tr>
-        <td><%= population.name %></td>
-        <td><%= population.email %></td>
-        <td><%= population.id %></td>
-        <td><%= link_to 'Show', population %></td>
-        <td><%= link_to 'Edit', edit_population_path(population) %></td>
-        <td><%= link_to 'Destroy', population, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Unique Number</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Population', new_population_path %>
+    </thead>
+    <tbody>
+      <tr class="gradeX">
+        <% @population.each do |population| %>
+          <tr>
+            <td><%= population.name %></td>
+            <td><%= population.email %></td>
+            <td><%= population.id %></td>
+            <td><%= link_to 'Show', population %></td>
+            <td><%= link_to 'Edit', edit_population_path(population) %></td>
+            <td><%= link_to 'Destroy', population, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+  <%= will_paginate @population %>
+</div>
