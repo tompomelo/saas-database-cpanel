@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :submit, :only => [:new, :create]
   resources :populations
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root "home#index"
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   get "populations/new", to: "populations#new"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

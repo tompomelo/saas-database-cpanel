@@ -5,6 +5,7 @@ class PopulationsController < ApplicationController
   # GET /populations.json
   def index
     @populations = Population.all
+
     @population = Population.paginate(:page => params[:page], :per_page => 5)
   end
 
@@ -21,7 +22,10 @@ class PopulationsController < ApplicationController
 
   # GET /populations/1/edit
   def edit
+    
   end
+  
+  
 
   # POST /populations
   # POST /populations.json
