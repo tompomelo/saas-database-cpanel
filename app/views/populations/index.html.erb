@@ -3,6 +3,12 @@
 <h1><center>Listing Populations</center></h1>
 <%= render "layouts/navigation" %>
 
+<div class="center">
+  <%= form_tag(populations_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+</div>
 
 <div class="container demo">
   <table class="datatable table table-striped table-bordered">
@@ -28,5 +34,5 @@
       </tr>
     </tbody>
   </table>
-  <%= will_paginate @population %>
+  <%# will_paginate @population %>
 </div>

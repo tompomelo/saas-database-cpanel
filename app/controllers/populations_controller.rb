@@ -5,8 +5,9 @@ class PopulationsController < ApplicationController
   # GET /populations.json
   def index
     @populations = Population.all
-
     @population = Population.paginate(:page => params[:page], :per_page => 5)
+    
+    @population = Population.search(params[:term])
   end
 
   # GET /populations/1
@@ -24,6 +25,7 @@ class PopulationsController < ApplicationController
   def edit
     
   end
+
   
   
 

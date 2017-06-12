@@ -1,10 +1,9 @@
 class Population < ActiveRecord::Base
-    
-    def self.search(search)
-        if search
-            where(["name LIKE ?", "%#{search}#"])    
+    def self.search(term)
+        if term
+            where('name LIKE ?', "%#{term}%").order('id DESC')
         else
-            all
+            order('id DESC') 
         end
     end
 end
